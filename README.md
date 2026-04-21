@@ -37,7 +37,7 @@ Create a `.env` file in project root from `.env.example` and set:
 
 ```env
 VITE_API_BASE_URL=https://your-api-base-url
-VITE_STUDENT_ID=YOUR_REGISTER_NUMBER
+VITE_UNIQUE_ID=YOUR_REGISTER_NUMBER
 VITE_STUDENT_PASSWORD=YOUR_PASSWORD
 ```
 
@@ -77,7 +77,7 @@ git push -u origin main
 3. Import the GitHub repository.
 4. In Project Settings -> Environment Variables add:
 	- `VITE_API_BASE_URL`
-	- `VITE_STUDENT_ID`
+	- `VITE_UNIQUE_ID`
 	- `VITE_STUDENT_PASSWORD`
 5. Deploy.
 

@@ -13,12 +13,12 @@ const getJson = async (response) => {
 
 export const fetchToken = async () => {
   const baseUrl = import.meta.env.VITE_API_BASE_URL
-  const studentId = import.meta.env.VITE_STUDENT_ID
+  const uniqueId = import.meta.env.VITE_UNIQUE_ID
   const password = import.meta.env.VITE_STUDENT_PASSWORD
 
-  if (!baseUrl || !studentId || !password) {
+  if (!baseUrl || !uniqueId || !password) {
     throw new Error(
-      'Missing API env vars. Set VITE_API_BASE_URL, VITE_STUDENT_ID, VITE_STUDENT_PASSWORD.',
+      'Missing API env vars. Set VITE_API_BASE_URL, VITE_UNIQUE_ID, VITE_STUDENT_PASSWORD.',
     )
   }
 
@@ -27,7 +27,7 @@ export const fetchToken = async () => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ studentId, password }),
+    body: JSON.stringify({ studentId: uniqueId, password }),
   })
 
   const data = await getJson(response)
